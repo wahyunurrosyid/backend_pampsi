@@ -1,0 +1,109 @@
+
+    "data": [
+        {
+            "id": 11,
+            "negaraId": null,
+            "namaProvinsi": "ACEH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 12,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA UTARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 13,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 14,
+            "negaraId": null,
+            "namaProvinsi": "RIAU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 15,
+            "negaraId": null,
+            "namaProvinsi": "JAMBI",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 16,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA SELATAN",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 17,
+            "negaraId": null,
+            "namaProvinsi": "BENGKULU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 18,
+            "negaraId": null,
+            "namaProvinsi": "LAMPUNG",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 19,
+            "negaraId": null,
+            "namaProvinsi": "KEPULAUAN BANGKA BELITUNG",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 21,
+            "negaraId": null,
+            "namaProvinsi": "KEPULAUAN RIAU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 31,
+            "negaraId": null,
+            "namaProvinsi": "DKI JAKARTA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 32,
+            "negaraId": null,
+            "namaProvinsi": "JAWA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 33,
+            "negaraId": null,
+            "namaProvinsi": "JAWA TENGAH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 34,
+            "negaraId": null,
+            "namaProvinsi": "DI YOGYAKARTA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 35,
+            "negaraId": null,
+            "namaProvinsi": "JAWA TIMUR",
+            "kodeProvinsi": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/admin/all-provinsi?page=1",
+        "last": "http://localhost:8000/admin/all-provinsi?page=3",
+        "prev": null,
+        "next": "http://localhost:8000/admin/all-provinsi?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 3,
+        "path": "http://localhost:8000/admin/all-provinsi",
+        "per_page": 15,
+        "to": 15,
+        "total": 34
+    }
+}

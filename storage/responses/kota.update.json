@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "message": "Kota berhasil diupdate",
+    "data": {
+        "id": 1,
+        "provinsi": 12,
+        "namaKota": "ANJASjs",
+        "kodeKota": "ANJASjs"
+    }
+}

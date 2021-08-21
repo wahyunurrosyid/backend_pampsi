@@ -1,0 +1,18 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 2,
+        "portfolio": "Project Based",
+        "project_kategori": "a",
+        "service_kategori": "as",
+        "klien": "test",
+        "klien_kategori": "child",
+        "lokasi": "bdg",
+        "member": "5",
+        "role": "y",
+        "start_date": "2000/2/15",
+        "end_date": "2000/1/02",
+        "deskripsi": "sadasdasd"
+    }
+}

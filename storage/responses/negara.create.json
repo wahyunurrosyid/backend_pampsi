@@ -1,0 +1,9 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 196,
+        "namaNegara": "titan",
+        "kodeNegara": "titan1"
+    }
+}

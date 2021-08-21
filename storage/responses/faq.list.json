@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "pertanyaan": 1,
+            "jawaban": 2,
+            "created_by": 1,
+            "updated_by": 1
+        },
+        {
+            "id": 2,
+            "pertanyaan": 2,
+            "jawaban": 3,
+            "created_by": 1,
+            "updated_by": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/faq?page=1",
+        "last": "http://localhost:8000/faq?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/faq",
+        "per_page": 15,
+        "to": 2,
+        "total": 2
+    }
+}

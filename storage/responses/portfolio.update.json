@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "message": "Portfolio berhasil diupdate",
+    "data": {
+        "id": 1,
+        "idUser": 1,
+        "layanan": "test1",
+        "kategori": "test1",
+        "klien": "test",
+        "tanggal": "2021-02-03"
+    }
+}

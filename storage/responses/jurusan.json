@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "kode": "KLI",
+            "nama": null,
+            "dataUniversitas": {
+                "id": 1,
+                "nama": "Universitas Gajah Mada"
+            }
+        },
+        {
+            "id": 2,
+            "kode": "PIO",
+            "nama": null,
+            "dataUniversitas": {
+                "id": 1,
+                "nama": "Universitas Gajah Mada"
+            }
+        }
+    ]
+}

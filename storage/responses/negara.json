@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "nama_negara": "Indonesia"
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/general/all-negara?fields%5Bnegara%5D=nama_negara&filter%5Bnama_negara%5D=&sort=&page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/general/all-negara?fields%5Bnegara%5D=nama_negara&filter%5Bnama_negara%5D=&sort=&page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/general/all-negara",
+        "per_page": 30,
+        "to": 1,
+        "total": 1
+    }
+}

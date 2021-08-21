@@ -1,0 +1,139 @@
+{
+    "data": [
+        {
+            "nama_kota": "Kab. Simeulue",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Singkil",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Selatan",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Tenggara",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Timur",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Tengah",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Barat",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Besar",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Pidie",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Bireuen",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Utara",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Barat Daya",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Gayo Lues",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Tamiang",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Nagan Raya",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Aceh Jaya",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Bener Meriah",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Pidie Jaya",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kota Banda Aceh",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kota Sabang",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kota Langsa",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kota Lhokseumawe",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kota Subulussalam",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Nias",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Mandailing Natal",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Tapanuli Selatan",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Tapanuli Tengah",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Tapanuli Utara",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Toba Samosir",
+            "kode_kota": null
+        },
+        {
+            "nama_kota": "Kab. Labuhan Batu",
+            "kode_kota": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/general/all-kota?fields%5Bkota%5D=nama_kota%2Ckode_kota&page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/general/all-kota?fields%5Bkota%5D=nama_kota%2Ckode_kota&page%5Bnumber%5D=17",
+        "prev": null,
+        "next": "http://localhost:8000/general/all-kota?fields%5Bkota%5D=nama_kota%2Ckode_kota&page%5Bnumber%5D=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 17,
+        "path": "http://localhost:8000/general/all-kota",
+        "per_page": 30,
+        "to": 30,
+        "total": 499
+    }
+}

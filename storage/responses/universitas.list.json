@@ -1,0 +1,35 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "nama": "Universitas Gajah Mada"
+        },
+        {
+            "id": 2,
+            "nama": "ITB"
+        },
+        {
+            "id": 3,
+            "nama": "Universitas Padjadjaran"
+        },
+        {
+            "id": 4,
+            "nama": "ITENAS"
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/admin/all-universitas?page=1",
+        "last": "http://localhost:8000/admin/all-universitas?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/admin/all-universitas",
+        "per_page": 15,
+        "to": 4,
+        "total": 4
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "message": "Kota berhasil diupdate",
+    "data": {
+        "id": 1,
+        "negaraId": "1",
+        "namaProvinsi": "butan",
+        "kodeProvinsi": "21e"
+    }
+}

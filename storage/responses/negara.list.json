@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "namaNegara": "titan2",
+            "kodeNegara": "titan2"
+        },
+        {
+            "id": 2,
+            "namaNegara": "Afrika Selatan",
+            "kodeNegara": null
+        },
+        {
+            "id": 3,
+            "namaNegara": "Afrika Tengah",
+            "kodeNegara": null
+        },
+        {
+            "id": 4,
+            "namaNegara": "Albania",
+            "kodeNegara": null
+        },
+        {
+            "id": 5,
+            "namaNegara": "Aljazair",
+            "kodeNegara": null
+        },
+        {
+            "id": 6,
+            "namaNegara": "Amerika Serikat",
+            "kodeNegara": null
+        },
+        {
+            "id": 7,
+            "namaNegara": "Androrra",
+            "kodeNegara": null
+        },
+        {
+            "id": 8,
+            "namaNegara": "Angola",
+            "kodeNegara": null
+        },
+        {
+            "id": 9,
+            "namaNegara": "Antigua dan Barbuda",
+            "kodeNegara": null
+        },
+        {
+            "id": 10,
+            "namaNegara": "Arab Saudi",
+            "kodeNegara": null
+        },
+        {
+            "id": 11,
+            "namaNegara": "Argentina",
+            "kodeNegara": null
+        },
+        {
+            "id": 12,
+            "namaNegara": "Armenia",
+            "kodeNegara": null
+        },
+        {
+            "id": 13,
+            "namaNegara": "Australia",
+            "kodeNegara": null
+        },
+        {
+            "id": 14,
+            "namaNegara": "Austria",
+            "kodeNegara": null
+        },
+        {
+            "id": 15,
+            "namaNegara": "Azerbaijan",
+            "kodeNegara": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/admin/negara?page=1",
+        "last": "http://localhost:8000/admin/negara?page=13",
+        "prev": null,
+        "next": "http://localhost:8000/admin/negara?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 13,
+        "path": "http://localhost:8000/admin/negara",
+        "per_page": 15,
+        "to": 15,
+        "total": 195
+    }
+}

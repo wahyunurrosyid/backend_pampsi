@@ -1,0 +1,28 @@
+// respon berhasil disimpan
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 5,
+        "kode": "KLI",
+        "nama": "asdf",
+        "dataUniversitas": {
+            "id": 1,
+            "nama": "Universitas Gajah Mada"
+        }
+    }
+}
+
+
+// respon validasi error
+{
+    "status": "failed",
+    "message": "data gagal disimpan!",
+    "data": {
+        "errors": {
+            "id": [
+                "Kode Jurusan sudah digunakan!"
+            ]
+        }
+    }
+}

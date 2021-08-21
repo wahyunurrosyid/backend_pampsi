@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "nama": "Psikologi Klinis"
+        },
+        {
+            "id": 2,
+            "nama": "Psikologi Industri"
+        },
+        {
+            "id": 3,
+            "nama": "Psikologi Pendidikan"
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/general/all-bidang?page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/general/all-bidang?page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/general/all-bidang",
+        "per_page": 30,
+        "to": 3,
+        "total": 3
+    }
+}

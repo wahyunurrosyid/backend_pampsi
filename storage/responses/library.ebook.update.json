@@ -1,0 +1,15 @@
+{
+    "status": "success",
+    "message": "Ebook berhasil diupdate",
+    "data": {
+        "id": 3,
+        "user_id": 3,
+        "judul": "blanditiis",
+        "author": "possimus",
+        "synopsis": "corrupti",
+        "visible": "private",
+        "bidang_id": "11",
+        "file": null,
+        "image": null
+    }
+}

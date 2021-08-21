@@ -1,0 +1,23 @@
+// respon berhasil disimpan
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 3,
+        "nama": "Universitas Padjadjaran"
+    }
+}
+
+// respon validasi error
+{
+    "status": "failed",
+    "message": "data gagal disimpan!",
+    "data": {
+        "errors": {
+            "nama": [
+                "kolom nama sudah digunakan!",
+                "panjang karakter nama kurang dari 20"
+            ]
+        }
+    }
+}

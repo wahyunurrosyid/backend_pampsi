@@ -1,0 +1,208 @@
+{
+    "data": [
+        {
+            "id": 11,
+            "negaraId": null,
+            "namaProvinsi": "ACEH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 12,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA UTARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 13,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 14,
+            "negaraId": null,
+            "namaProvinsi": "RIAU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 15,
+            "negaraId": null,
+            "namaProvinsi": "JAMBI",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 16,
+            "negaraId": null,
+            "namaProvinsi": "SUMATERA SELATAN",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 17,
+            "negaraId": null,
+            "namaProvinsi": "BENGKULU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 18,
+            "negaraId": null,
+            "namaProvinsi": "LAMPUNG",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 19,
+            "negaraId": null,
+            "namaProvinsi": "KEPULAUAN BANGKA BELITUNG",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 21,
+            "negaraId": null,
+            "namaProvinsi": "KEPULAUAN RIAU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 31,
+            "negaraId": null,
+            "namaProvinsi": "DKI JAKARTA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 32,
+            "negaraId": null,
+            "namaProvinsi": "JAWA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 33,
+            "negaraId": null,
+            "namaProvinsi": "JAWA TENGAH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 34,
+            "negaraId": null,
+            "namaProvinsi": "DI YOGYAKARTA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 35,
+            "negaraId": null,
+            "namaProvinsi": "JAWA TIMUR",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 36,
+            "negaraId": null,
+            "namaProvinsi": "BANTEN",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 51,
+            "negaraId": null,
+            "namaProvinsi": "BALI",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 52,
+            "negaraId": null,
+            "namaProvinsi": "NUSA TENGGARA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 53,
+            "negaraId": null,
+            "namaProvinsi": "NUSA TENGGARA TIMUR",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 61,
+            "negaraId": null,
+            "namaProvinsi": "KALIMANTAN BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 62,
+            "negaraId": null,
+            "namaProvinsi": "KALIMANTAN TENGAH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 63,
+            "negaraId": null,
+            "namaProvinsi": "KALIMANTAN SELATAN",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 64,
+            "negaraId": null,
+            "namaProvinsi": "KALIMANTAN TIMUR",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 65,
+            "negaraId": null,
+            "namaProvinsi": "KALIMANTAN UTARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 71,
+            "negaraId": null,
+            "namaProvinsi": "SULAWESI UTARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 72,
+            "negaraId": null,
+            "namaProvinsi": "SULAWESI TENGAH",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 73,
+            "negaraId": null,
+            "namaProvinsi": "SULAWESI SELATAN",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 74,
+            "negaraId": null,
+            "namaProvinsi": "SULAWESI TENGGARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 75,
+            "negaraId": null,
+            "namaProvinsi": "GORONTALO",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 76,
+            "negaraId": null,
+            "namaProvinsi": "SULAWESI BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 81,
+            "negaraId": null,
+            "namaProvinsi": "MALUKU",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 82,
+            "negaraId": null,
+            "namaProvinsi": "MALUKU UTARA",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 91,
+            "negaraId": null,
+            "namaProvinsi": "PAPUA BARAT",
+            "kodeProvinsi": null
+        },
+        {
+            "id": 94,
+            "negaraId": null,
+            "namaProvinsi": "PAPUA",
+            "kodeProvinsi": null
+        }
+    ]
+}

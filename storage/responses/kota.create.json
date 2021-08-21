@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 0,
+        "provinsi": 11,
+        "namaKota": "ANJAY",
+        "kodeKota": "ANJAY1"
+    }
+}

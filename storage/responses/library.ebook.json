@@ -1,0 +1,30 @@
+{
+    "data": [
+        {
+            "id": 3,
+            "user_id": 3,
+            "judul": "dasdad",
+            "author": "",
+            "synopsis": null,
+            "visible": "private",
+            "bidang_id": 0,
+            "file": null,
+            "image": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/user/ebook?page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/user/ebook?page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/user/ebook",
+        "per_page": 100,
+        "to": 1,
+        "total": 1
+    }
+}

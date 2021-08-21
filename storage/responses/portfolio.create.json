@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 1,
+        "idUser": "1",
+        "layanan": "test",
+        "kategori": "test",
+        "klien": "test",
+        "tanggal": "2021-2-3"
+    }
+}

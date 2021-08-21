@@ -1,0 +1,109 @@
+{
+    "data": [
+        {
+            "id": 1101,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN SIMEULUE",
+            "kodeKota": null
+        },
+        {
+            "id": 1102,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH SINGKIL",
+            "kodeKota": null
+        },
+        {
+            "id": 1103,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH SELATAN",
+            "kodeKota": null
+        },
+        {
+            "id": 1104,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH TENGGARA",
+            "kodeKota": null
+        },
+        {
+            "id": 1105,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH TIMUR",
+            "kodeKota": null
+        },
+        {
+            "id": 1106,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH TENGAH",
+            "kodeKota": null
+        },
+        {
+            "id": 1107,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH BARAT",
+            "kodeKota": null
+        },
+        {
+            "id": 1108,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH BESAR",
+            "kodeKota": null
+        },
+        {
+            "id": 1109,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN PIDIE",
+            "kodeKota": null
+        },
+        {
+            "id": 1110,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN BIREUEN",
+            "kodeKota": null
+        },
+        {
+            "id": 1111,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH UTARA",
+            "kodeKota": null
+        },
+        {
+            "id": 1112,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH BARAT DAYA",
+            "kodeKota": null
+        },
+        {
+            "id": 1113,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN GAYO LUES",
+            "kodeKota": null
+        },
+        {
+            "id": 1114,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN ACEH TAMIANG",
+            "kodeKota": null
+        },
+        {
+            "id": 1115,
+            "provinsi": "11",
+            "namaKota": "KABUPATEN NAGAN RAYA",
+            "kodeKota": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/admin/all-kota?page=1",
+        "last": "http://localhost:8000/admin/all-kota?page=35",
+        "prev": null,
+        "next": "http://localhost:8000/admin/all-kota?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 35,
+        "path": "http://localhost:8000/admin/all-kota",
+        "per_page": 15,
+        "to": 15,
+        "total": 514
+    }
+}

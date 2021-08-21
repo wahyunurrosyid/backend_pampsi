@@ -1,0 +1,8 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 4,
+        "nama": "Psikologi Test"
+    }
+}

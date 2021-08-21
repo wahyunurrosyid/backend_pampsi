@@ -1,0 +1,18 @@
+{
+    "status": "success",
+    "message": "Artikel berhasil diupdate",
+    "data": {
+        "id": 1,
+        "portfolio": "Individual Based",
+        "project_kategori": "a",
+        "service_kategori": "asdsa",
+        "klien": "test",
+        "klien_kategori": "child",
+        "lokasi": "bdg",
+        "member": 5,
+        "role": "y",
+        "start_date": "2000-02-15",
+        "end_date": "2000-01-02",
+        "deskripsi": "sadasdasd"
+    }
+}

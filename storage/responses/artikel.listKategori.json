@@ -1,0 +1,17 @@
+[
+    {
+        "nama": "Psikologi Industri",
+        "created_at": "2021-03-01T02:56:36.000000Z",
+        "updated_at": "2021-03-01T02:56:39.000000Z"
+    },
+    {
+        "nama": "Psikologi Klinis",
+        "created_at": "2021-03-01T02:56:05.000000Z",
+        "updated_at": "2021-03-01T02:56:08.000000Z"
+    },
+    {
+        "nama": "Psikologi Pendidikan",
+        "created_at": "2021-03-01T02:56:49.000000Z",
+        "updated_at": "2021-03-01T02:56:51.000000Z"
+    }
+]

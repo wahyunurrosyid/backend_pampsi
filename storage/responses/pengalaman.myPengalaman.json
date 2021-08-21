@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "id": 2,
+            "portfolio": "Project Based",
+            "project_kategori": "a",
+            "service_kategori": "as",
+            "klien": "test",
+            "klien_kategori": "child",
+            "lokasi": "bdg",
+            "member": 5,
+            "role": "y",
+            "start_date": "2000-02-15",
+            "end_date": "2000-01-02",
+            "deskripsi": "sadasdasd"
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/user/pengalaman?fields%5Bpengalaman%5D=&filter%5Buser_id%5D=&sort=&page%5Bnumber%5D=&page%5Bsize%5D=&page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/user/pengalaman?fields%5Bpengalaman%5D=&filter%5Buser_id%5D=&sort=&page%5Bnumber%5D=&page%5Bsize%5D=&page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/user/pengalaman",
+        "per_page": 15,
+        "to": 1,
+        "total": 1
+    }
+}

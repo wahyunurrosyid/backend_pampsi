@@ -1,0 +1,11 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 3,
+        "user_id": 1,
+        "content": "ini create feed",
+        "created_at": "2021-02-17T03:27:12.000000Z",
+        "updated_at": "2021-02-17T03:27:12.000000Z"
+    }
+}

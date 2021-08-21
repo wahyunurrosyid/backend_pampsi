@@ -1,0 +1,66 @@
+{
+    "data": [
+        {
+            "id": 3,
+            "nama_lengkap": null,
+            "tempat_lahir": null,
+            "tanggal_lahir": null,
+            "kota1_id": 1101,
+            "kota2_id": null,
+            "no_hp": null,
+            "universitas_id": null,
+            "jurusan_id": null,
+            "bidang_id": 1,
+            "tahun_masuk": null,
+            "tahun_lulus": null,
+            "nomor_ijazah": "12345678",
+            "no_sipp": null,
+            "skill_kompetensi": null,
+            "profile_singkat": null,
+            "jenis_kelamin": "Laki-laki",
+            "photo_profile": null,
+            "relationships": [
+                {
+                    "kota1": {
+                        "data": {
+                            "id": 1101,
+                            "provinsi_id": 11,
+                            "nama_kota": "Kab. Simeulue",
+                            "kode_kota": null
+                        }
+                    }
+                },
+                {
+                    "kota2": {
+                        "data": null
+                    }
+                },
+                {
+                    "bidang": {
+                        "data": {
+                            "id": 1,
+                            "nama": "Psikologi Klinis",
+                            "created_at": null,
+                            "updated_at": null
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/general/all-psikolog?include=dataKota1%2CdataKota2%2CdataBidang&page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/general/all-psikolog?include=dataKota1%2CdataKota2%2CdataBidang&page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/general/all-psikolog",
+        "per_page": 100,
+        "to": 1,
+        "total": 1
+    }
+}

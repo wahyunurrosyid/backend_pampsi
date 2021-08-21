@@ -1,0 +1,15 @@
+{
+    "status": "success",
+    "message": "data berhasil disimpan!",
+    "data": {
+        "id": 3,
+        "user_id": 3,
+        "judul": "placeat",
+        "author": "dolor",
+        "synopsis": "fuga",
+        "visible": "private",
+        "bidang_id": "7",
+        "file": null,
+        "image": null
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "nama": "Universitas Gajah Mada"
+        },
+        {
+            "id": 2,
+            "nama": "ITENASx"
+        },
+        {
+            "id": 3,
+            "nama": "Universitas Padjadjaran"
+        },
+        {
+            "id": 4,
+            "nama": "IT"
+        },
+        {
+            "id": 5,
+            "nama": "ITB"
+        },
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "idUser": 1,
+            "tingkat": "S1",
+            "namaLembagaPendidikan": "",
+            "tahunLulus": 0
+        }
+    ]
+}

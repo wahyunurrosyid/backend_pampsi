@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "message": "Berhasil like feed",
+    "data": {
+        "id": 8,
+        "likes": 2,
+        "likeable_type": "App\\Models\\Feed",
+        "likeable_id": 2,
+        "created_at": "2021-02-22T03:38:31.000000Z",
+        "updated_at": "2021-02-22T03:38:31.000000Z"
+    }
+}

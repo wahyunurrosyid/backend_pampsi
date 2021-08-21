@@ -1,0 +1,11 @@
+{
+    "status": "success",
+    "message": "Berhasil assign moderator",
+    "data": {
+        "user_id": "3",
+        "nama_kategori": "Psikologi Industri",
+        "updated_at": "2021-03-03T08:45:43.000000Z",
+        "created_at": "2021-03-03T08:45:43.000000Z",
+        "id": 1
+    }
+}

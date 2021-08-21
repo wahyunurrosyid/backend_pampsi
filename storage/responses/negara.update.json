@@ -1,0 +1,9 @@
+{
+    "status": "success",
+    "message": "Negara berhasil diupdate",
+    "data": {
+        "id": 1,
+        "namaNegara": "titan2",
+        "kodeNegara": "titan2"
+    }
+}

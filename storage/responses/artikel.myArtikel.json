@@ -1,0 +1,41 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "kategori_id": 1,
+            "judul": "1judul",
+            "isi": "",
+            "image": null,
+            "user_id": 1,
+            "views": 0,
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 2,
+            "kategori_id": 1,
+            "judul": "asdas",
+            "isi": "asdas",
+            "image": null,
+            "user_id": 1,
+            "views": 0,
+            "created_at": null,
+            "updated_at": null
+        }
+    ],
+    "links": {
+        "first": "http://localhost:8000/user/artikel?page%5Bnumber%5D=1&page%5Bsize%5D=2&page%5Bnumber%5D=1",
+        "last": "http://localhost:8000/user/artikel?page%5Bnumber%5D=1&page%5Bsize%5D=2&page%5Bnumber%5D=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://localhost:8000/user/artikel",
+        "per_page": 2,
+        "to": 2,
+        "total": 2
+    }
+}
