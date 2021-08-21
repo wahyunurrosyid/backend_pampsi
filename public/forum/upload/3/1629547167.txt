@@ -1,0 +1,25 @@
+Sidang PAMPsi
+
+PAMPsi : APLIKASI PENDATAAN PSIKOLOG DI INDONESIA BERBASIS ANDROID
+
+1. Registrasi
+2. Approval Admin
+3. Survei, Lowongan Pekerjaan, dan Status hapus
+4. Forum dipertahankan
+   diperjelas antara judul dan isi, tambahkan paging, 
+   sort by berdasarkan komentar terbanyak. 
+   Pembatasan jumlah karakter
+   Pin forum
+   Upload attachment (document)
+5. Profil psikolog
+   - Alamat klinik
+   - No SIP, ijazah upload tapi tidak ditampilkan
+   - Expertise
+6. Tujuan diganti sesuaikan dengan judul
+7. Fitur cari psikolog --> Fitur cari teman diperluas (berdasarkan daerah, dll)
+8. Chat dengan teman psikolog
+9. Buku PA sesuaikan
+10. Artikel ada (approval admin), Ebook hapus
+
+User: Psikolog dan Admin
+   

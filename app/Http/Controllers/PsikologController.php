@@ -364,6 +364,17 @@ class PsikologController extends Controller
         }
 
         if (!is_null($user)) {
+            //move gambar
+            $image = $req->photo_ijazah;
+            if(!is_null($image)){
+                $ex = $image->getClientOriginalExtension();
+                $imageName = time().".".$ex;
+                $user->objIjazah=$req->photo_ijazah;
+                $user->photo_ijazah=$imageName;
+                if(!is_null($image)){
+                    $image->move('upload/photo_ijazah/'.$user->id.'/', $imageName, 'local');
+                }
+            }
             $user->update($req->all());
             if(@$req->biro){
                 $biro = json_encode($req->biro);
@@ -371,6 +382,9 @@ class PsikologController extends Controller
             }
             $skill = json_encode($req->skill_kompetensi);
             $user->skill_kompetensi = $skill;
+            if(!is_null($req->photo_ijazah)){
+                $user->photo_ijazah=$imageName;
+            }
             $user->save();
             return response()->json([
                 'status' => 'success',

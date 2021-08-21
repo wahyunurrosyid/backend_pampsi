@@ -213,6 +213,7 @@ $router->group(['prefix' => 'user'], function () use ($router) {
     $router->post('/forum/comment/{id}/create', ['middleware' => ['auth','role:PSIKOLOG|ADMIN|KAMPUS'], 'uses' => 'CommentForumController@createCommentForum']);
     $router->post('/forum/comment/{id}/update', ['middleware' => ['auth','role:PSIKOLOG|ADMIN|KAMPUS'], 'uses' => 'CommentForumController@updateCommentForum']);
     $router->post('/forum/comment/{id}/delete', ['middleware' => ['auth','role:PSIKOLOG|ADMIN|KAMPUS'], 'uses' => 'CommentForumController@deleteCommentForum']);
+    $router->get('/forum/sort-comment',['middleware' => ['auth','role:PSIKOLOG|ADMIN'], 'uses' => 'ForumController@listSortCommentForum']);
 
     //notifikasi
     $router->post('/notifikasi', ['middleware' => ['auth','role:PSIKOLOG|ADMIN'], 'uses' => 'NotifikasiController@listNotifikasi']);

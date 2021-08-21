@@ -13,6 +13,9 @@ use App\Notifications\LikeNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * @group Forum
@@ -32,7 +35,7 @@ class ForumController extends Controller
      */
     public function listForum()
     {
-        $forum = QueryBuilder::for(Forum::class)
+        $forum = QueryBuilder::for(Forum::where('status_acc','accepted'))
             ->allowedIncludes(['dataComment','dataUser','likers'])
             ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','status','created_at','id'])
             ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','status'])
@@ -80,7 +83,7 @@ class ForumController extends Controller
         $model = new Forum();
         $model->fill($req->input());
         $model->objImage=$req->objImage;
-
+        $model->objFile=$req->file_forum;
         $validation = $model->validate();
 
         $image = $req->objImage;
@@ -88,6 +91,14 @@ class ForumController extends Controller
             $ex = $image->getClientOriginalExtension();
             $imageName = time().".".$ex;
             $model->image=$imageName;
+        }
+
+        //move file
+        $file = $req->file_forum;
+        if(!is_null($file)){
+            $exFile = $file->getClientOriginalExtension();
+            $fileName = time().".".$exFile;
+            $model->file_forum=$fileName;
         }
 
         //convert base64
@@ -121,6 +132,9 @@ class ForumController extends Controller
             $model->save();
             if(!is_null($image)){
                 $image->move('forum/upload/'.$auth->id.'', $imageName, 'local');
+            }
+            if(!is_null($file)){
+                $file->move('forum/upload/'.$auth->id.'',$fileName, 'local');
             }
             activity()->causedBy($auth->id)->performedOn(new Forum)->log('membuat forum');
             return response()->json([
@@ -405,6 +419,44 @@ class ForumController extends Controller
                 'alasan'=>null
             ]
         ]);
+    }
+    public function listSortCommentForum(Request $req){
+        $model = Forum::where('status_acc','accepted')->with('dataUser')->get();
+        $arr = [];
+        $counter = 0;
+        foreach($model as $value){
+            $arr[$counter]=[
+                'id'=>$value->id,
+                'nama_kategori'=>$value->nama_kategori,
+                'judul'=>$value->judul,
+                'isi'=>$value->isi,
+                'image'=>$value->image,
+                'user_id'=>$value->user_id,
+                'views'=>$value->views,
+                'alasan'=>$value->alasan,
+                'status'=>$value->status,
+                'created_at'=>$value->created_at,
+                'updated_at'=>$value->updated_at,
+                'file_forum'=>$value->file_forum,
+                'status_acc'=>$value->status_acc,
+                'count_comment'=>$value->getCountCommentAttribute(),
+                'nama_lengkap'=>$value->dataUser->nama_lengkap,
+            ];
+            $counter++;
+        }
+        
+        $sort = array_column($arr, 'count_comment');
+        array_multisort($sort, SORT_DESC, $arr);
+        return $this->paginate($arr,$req->per_page,$req->page);
+    }
+
+    public function paginate($items, $per_page = 15, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+
+        return new LengthAwarePaginator(array_values($items->forPage($page, $per_page)->toArray()), $items->count(), $per_page, $page, $options);
     }
 
     public function findData($id){

@@ -28,7 +28,10 @@ class ForumResource extends JsonResource
         'alasan',
         'status',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'file_forum',
+        'status_acc',
+        'count_comment',
     ];
     /**
      * Transform the resource into an array.

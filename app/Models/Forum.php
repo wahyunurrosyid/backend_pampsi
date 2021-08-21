@@ -4,14 +4,16 @@ namespace App\Models;
 
 use App\Traits\Likeable;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CommentForum;
 
 class Forum extends BaseModel
 {
     use Likeable;
     
     protected $table = 'forum';
-    protected $fillable = ['nama_kategori','judul','isi','image','user_id','views','alasan'];
+    protected $fillable = ['nama_kategori','judul','isi','image','user_id','views','alasan','file_forum', 'status', 'status_acc',];
     public $objImage;
+    public $objFile;
 
     //list rule validasi
     public function rules()
@@ -58,4 +60,12 @@ class Forum extends BaseModel
                     ->join('users','moderator_forum.user_id','=','users.id')
                     ->select('users.id','users.username','users.nama_lengkap','users.email');
     }
+    public function getCountCommentAttribute(){
+        $model=CommentForum::where('forum_id',$this->id)->get()->count();
+        if(is_null($model)){
+            return 0;
+        }
+        return $model;
+    }
+
 }

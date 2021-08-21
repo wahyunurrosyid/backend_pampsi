@@ -37,6 +37,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
 
     public $password_no_hash;
     public $objPhoto;
+    public $objIjazah;
    
 
     /**
@@ -45,7 +46,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
      * @var array
      */
     protected $fillable = [
-        'username','email','password','email_verified_at','role_id','status','api_token','remember_token','nama_lengkap','member_id','tempat_lahir','tanggal_lahir','kota1_id','kota2_id','no_hp','universitas_id','jurusan_id','tahun_masuk','tahun_lulus','nomor_ijazah','no_sipp','skill_kompetensi','profile_singkat','longitude','latitude','jenis_kelamin','photo_profile','akun_verified_at','akun_verified_by','bidang_id','agama','layanan', 'biro', 'last_login'
+        'username','email','password','email_verified_at','role_id','status','api_token','remember_token','nama_lengkap','member_id','tempat_lahir','tanggal_lahir','kota1_id','kota2_id','no_hp','universitas_id','jurusan_id','tahun_masuk','tahun_lulus','nomor_ijazah','no_sipp','skill_kompetensi','profile_singkat','longitude','latitude','jenis_kelamin','photo_profile','akun_verified_at','akun_verified_by','bidang_id','agama','layanan', 'biro', 'last_login', 'photo_ijazah'
     ];
 
     /**

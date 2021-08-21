@@ -94,6 +94,7 @@ class UserController extends Controller
      * @bodyParam kota2_id integer optional
      * @bodyParam no_hp integer required
      * @bodyParam bidang_id integer required
+     * @bodyParam photo_ijazah file
      * @response{
      * "status": "success/failed",
      * "message": "Update user Berhasil",
@@ -128,8 +129,13 @@ class UserController extends Controller
         $user = User::find($auth->id);
         
         if(!is_null($user)){
+
+            
+
             $user->fill($req->input());
-            $user->status = 2;
+            // $user->status = 2;
+
+            
             $user->save();
             dispatch(new TungguVerifikasiAdmin($user));
             activity()->causedBy($user->id)->log('Berhasil melakukan registrasi');
@@ -217,11 +223,14 @@ class UserController extends Controller
         $auth = Auth::user();
 
         if($auth->role_id == 1){
+
             
+
             $user = User::where('id', $req->id)->select('id','username','status','email','jurusan_id','bidang_id','tahun_masuk','tahun_lulus')->first();
             $user->status = $req->status;
             $user->akun_verified_by = $auth->username;
             $user->save();
+            
             if($user->status == 2){
                 dispatch(new ProcessConfirmed($user));
                 activity()->causedBy($auth->id)->log('Berhasil konfirmasi registran');
