@@ -107,6 +107,9 @@ $router->group(['prefix' => 'admin','middleware' => ['auth','role:ADMIN|KAMPUS|P
 
     //export
     $router->get('/export-user', 'ExportController@exportUser');
+    
+    //forum
+    $router->post('/forum-status-acc/update', 'ForumController@updateStatusAccForum');
 });
 //end register
 
@@ -377,3 +380,6 @@ $router->group(['prefix' => 'moderator', 'middleware' => ['auth','role:MODERATOR
 $router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'/* ,'middleware' => ['auth','role:KAMPUS'] */], function() use ($router) {
     $router->get('logs', 'LogViewerController@index');
 });
+
+//chating
+$router->post('/chat/store','ChatController@storeChat');

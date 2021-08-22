@@ -425,25 +425,49 @@ class ForumController extends Controller
         $arr = [];
         $counter = 0;
         foreach($model as $value){
-            $arr[$counter]=[
-                'id'=>$value->id,
-                'nama_kategori'=>$value->nama_kategori,
-                'judul'=>$value->judul,
-                'isi'=>$value->isi,
-                'image'=>$value->image,
-                'user_id'=>$value->user_id,
-                'views'=>$value->views,
-                'alasan'=>$value->alasan,
-                'status'=>$value->status,
-                'created_at'=>$value->created_at,
-                'updated_at'=>$value->updated_at,
-                'file_forum'=>$value->file_forum,
-                'status_acc'=>$value->status_acc,
-                'count_comment'=>$value->getCountCommentAttribute(),
-                'nama_lengkap'=>$value->dataUser->nama_lengkap,
-            ];
-            $counter++;
+            if(!is_null($req->nama_kategori)){
+                if($req->nama_kategori==$value->nama_kategori){
+                    $arr[$counter]=[
+                        'id'=>$value->id,
+                        'nama_kategori'=>$value->nama_kategori,
+                        'judul'=>$value->judul,
+                        'isi'=>$value->isi,
+                        'image'=>$value->image,
+                        'user_id'=>$value->user_id,
+                        'views'=>$value->views,
+                        'alasan'=>$value->alasan,
+                        'status'=>$value->status,
+                        'created_at'=>$value->created_at,
+                        'updated_at'=>$value->updated_at,
+                        'file_forum'=>$value->file_forum,
+                        'status_acc'=>$value->status_acc,
+                        'count_comment'=>$value->getCountCommentAttribute(),
+                        'nama_lengkap'=>$value->dataUser->nama_lengkap,
+                    ];
+                    $counter++;
+                }
+            }else{
+                $arr[$counter]=[
+                    'id'=>$value->id,
+                    'nama_kategori'=>$value->nama_kategori,
+                    'judul'=>$value->judul,
+                    'isi'=>$value->isi,
+                    'image'=>$value->image,
+                    'user_id'=>$value->user_id,
+                    'views'=>$value->views,
+                    'alasan'=>$value->alasan,
+                    'status'=>$value->status,
+                    'created_at'=>$value->created_at,
+                    'updated_at'=>$value->updated_at,
+                    'file_forum'=>$value->file_forum,
+                    'status_acc'=>$value->status_acc,
+                    'count_comment'=>$value->getCountCommentAttribute(),
+                    'nama_lengkap'=>$value->dataUser->nama_lengkap,
+                ];
+                $counter++;
+            }
         }
+
         
         $sort = array_column($arr, 'count_comment');
         array_multisort($sort, SORT_DESC, $arr);
@@ -458,7 +482,17 @@ class ForumController extends Controller
 
         return new LengthAwarePaginator(array_values($items->forPage($page, $per_page)->toArray()), $items->count(), $per_page, $page, $options);
     }
-
+    public function updateStatusAccForum(Request $req,$id)
+    {
+        $model = $this->findData($id);
+        $model->status_acc = $req->status_acc;
+        if($model->save()){
+            return response()->json([
+                'status_acc'=>'success',
+                'message'=>'Berhasil mengubah status forum',
+            ]);
+        }
+    }
     public function findData($id){
         $model = Forum::find($id);
         if(is_null($model)){

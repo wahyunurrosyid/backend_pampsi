@@ -168,11 +168,10 @@ class UserController extends Controller
      */
     public function listRegistran()
     {
-        $registran = User::join('data_alumni', 'users.nomor_ijazah', '=','data_alumni.no_ijazah')
-                        ->join('kota', 'users.kota1_id', '=', 'kota.id')
+        $registran = User::
+                        join('kota', 'users.kota1_id', '=', 'kota.id')
                         ->where('status', 1)
-                        ->select('users.id', 'data_alumni.nama','users.status','users.no_hp','kota.nama_kota','users.photo_profile')->get();
-
+                        ->select('users.id', 'users.nama_lengkap','users.status','users.no_hp','kota.nama_kota','users.photo_profile')->get();
         return $registran;
     }
     /**
@@ -191,8 +190,8 @@ class UserController extends Controller
      */
     public function unlistRegistran()
     {
-        $registran = User::join('data_alumni', 'nomor_ijazah', '=','no_ijazah', 'left outer')
-                        ->leftJoin('kota', 'users.kota1_id', '=', 'kota.id')
+        $registran = User::
+                        leftJoin('kota', 'users.kota1_id', '=', 'kota.id')
                         ->where('status', 1)
                         ->where('role_id', '=', 3)
                         ->select('users.id', 'users.username','users.nama_lengkap','users.status','users.no_hp','kota.nama_kota','users.photo_profile','no_ijazah')->get();
