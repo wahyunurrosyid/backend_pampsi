@@ -110,16 +110,16 @@ class UserController extends Controller
     public function updateUser($req)
     {
         $rules = [
-            'tahun_masuk' => 'required|integer',
-            'tahun_lulus' => 'required|integer',
-            'jurusan_id' => 'required|integer',
-            'universitas_id' => 'required|integer',
-            'nomor_ijazah' => 'required|unique:users,nomor_ijazah',
-            'nama_lengkap' => 'required|unique:users,nama_lengkap',
-            'tempat_lahir' => 'required|string',
-            'kota1_id' => 'required|integer',
-            'no_hp' => 'required|integer',
-            'bidang_id' => 'required|integer'
+            // 'tahun_masuk' => 'required|integer',
+            // 'tahun_lulus' => 'required|integer',
+            // 'jurusan_id' => 'required|integer',
+            // 'universitas_id' => 'required|integer',
+            // 'nomor_ijazah' => 'required|unique:users,nomor_ijazah',
+            // 'nama_lengkap' => 'required|unique:users,nama_lengkap',
+            // 'tempat_lahir' => 'required|string',
+            // 'kota1_id' => 'required|integer',
+            // 'no_hp' => 'required|integer',
+            // 'bidang_id' => 'required|integer'
         ];
 
         //validasi form
@@ -129,9 +129,19 @@ class UserController extends Controller
         $user = User::find($auth->id);
         
         if(!is_null($user)){
-
-            
-
+        
+        if(isset($req->photo_ijazah)){
+            $image = $req->photo_ijazah;
+            if(!is_null($image)){
+                $ex = $image->getClientOriginalExtension();
+                $imageName = time().".".$ex;
+                $user->objIjazah=$req->photo_ijazah;
+                $user->photo_ijazah=$imageName;
+                if(!is_null($image)){
+                    $image->move('upload/photo_ijazah/'.$user->id.'/', $imageName, 'local');
+                }
+            }
+        }
             $user->fill($req->input());
             // $user->status = 2;
 

@@ -66,8 +66,8 @@ class ArtikelController extends Controller
     public function generalListArtikel()
     {
         $artikel = QueryBuilder::for(Artikel::where('visible','public')->orderBy('created_at','desc'))
-            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','visible'])
-            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','visible'])
+            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','visible','status_acc'])
+            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','visible','status_acc'])
             ->jsonPaginate()->appends(Request()->input());
 
         return new ArtikelCollection($artikel);
@@ -106,8 +106,8 @@ class ArtikelController extends Controller
     public function publicArtikel()
     {
         $artikel = QueryBuilder::for(Artikel::where('visible','public')->orderBy('created_at','desc'))
-            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','visible'])
-            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','visible'])
+            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','visible','status_acc',])
+            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','visible','status_acc',])
             ->jsonPaginate()->appends(Request()->input());
 
         return new ArtikelCollection($artikel);
@@ -404,7 +404,17 @@ class ArtikelController extends Controller
             'data'=>$user->unlike($artikel)
         ]);
     }
-
+    public function updateStatusAccArtikel(Request $req,$id)
+    {
+        $model = $this->findData($id);
+        $model->status_acc = $req->status_acc;
+        if($model->save()){
+            return response()->json([
+                'status_acc'=>'success',
+                'message'=>'Berhasil mengubah status Artikel',
+            ]);
+        }
+    }
     //find data
     public function findData($id){
         $model = Artikel::find($id);

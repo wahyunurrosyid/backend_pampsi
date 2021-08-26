@@ -8,7 +8,7 @@ class Artikel extends BaseModel
 {
     use Likeable;
     protected $table = 'artikel';
-    protected $fillable = ['nama_kategori','judul','isi','image','user_id','views','visible'];
+    protected $fillable = ['nama_kategori','judul','isi','image','user_id','views','visible','status_acc'];
     public $objImage;
 
     //list rule validasi

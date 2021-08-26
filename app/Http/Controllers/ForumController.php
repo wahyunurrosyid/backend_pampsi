@@ -35,12 +35,12 @@ class ForumController extends Controller
      */
     public function listForum()
     {
-        $forum = QueryBuilder::for(Forum::where('status_acc','accepted'))
+        //:where('status_acc','accepted')
+        $forum = QueryBuilder::for(Forum::class)
             ->allowedIncludes(['dataComment','dataUser','likers'])
-            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','status','created_at','id'])
-            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','status'])
+            ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views','status','created_at','id','status_acc', 'count_comment'])
+            ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views','status','status_acc'])
             ->jsonPaginate()->appends(Request()->input());
-
         return new ForumCollection($forum);
     }
     /**
@@ -64,7 +64,8 @@ class ForumController extends Controller
                 'forum'=>$where,
                 'dataComment'=>$where->dataComment,
                 'dataUser'=>$where->dataUser,
-                'dataModerator'=>$where->dataModerator
+                'dataModerator'=>$where->dataModerator,
+                'views'=>$where->views
             ]
         ]);
     }
@@ -170,6 +171,9 @@ class ForumController extends Controller
         if(!is_null($req->objImage)){
             $forum->objImage=$req->objImage;
         }
+        if(!is_null($req->file_forum)){
+            $forum->objFile=$req->file_forum;
+        }
         //validasi input
         $validation = $forum->validate();
 
@@ -179,6 +183,12 @@ class ForumController extends Controller
             $ex = $image->getClientOriginalExtension();
             $imageName = time().".".$ex;
             $forum->image=$imageName;
+        }
+        $file = $req->file_forum;
+        if(!is_null($file)){
+            $exFile = $file->getClientOriginalExtension();
+            $fileName = time().".".$exFile;
+            $model->file_forum=$fileName;
         }
 
         //convert base64
@@ -206,6 +216,9 @@ class ForumController extends Controller
             $forum->save();
             if(!is_null($image)){
                 $image->move('forum/upload/'.$auth->id.'', $imageName, 'local');
+            }
+            if(!is_null($file)){
+                $file->move('forum/upload/'.$auth->id.'',$fileName, 'local');
             }
             activity()->causedBy($auth->id)->performedOn(new Forum)->log('mengubah forum');
             return response()->json([
@@ -421,7 +434,7 @@ class ForumController extends Controller
         ]);
     }
     public function listSortCommentForum(Request $req){
-        $model = Forum::where('status_acc','accepted')->with('dataUser')->get();
+        $model = Forum::where('status_acc','waiting')->with('dataUser')->get();
         $arr = [];
         $counter = 0;
         foreach($model as $value){

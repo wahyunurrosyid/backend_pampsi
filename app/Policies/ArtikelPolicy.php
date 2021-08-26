@@ -16,6 +16,6 @@ class ArtikelPolicy
 
     public function deleteArtikel(User $user,$user_id)
     {
-        return $user->id === $user_id;
+        return $user->id === $user_id or $user->hasRole('ADMIN');;
     }
 }

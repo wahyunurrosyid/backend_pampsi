@@ -28,7 +28,8 @@ class ArtikelResource extends JsonResource
         'views',
         'visible',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'status_acc',
     ];
     /**
      * Transform the resource into an array.

@@ -109,7 +109,10 @@ $router->group(['prefix' => 'admin','middleware' => ['auth','role:ADMIN|KAMPUS|P
     $router->get('/export-user', 'ExportController@exportUser');
     
     //forum
-    $router->post('/forum-status-acc/update', 'ForumController@updateStatusAccForum');
+    $router->post('/forum-status-acc/{id}/update', 'ForumController@updateStatusAccForum');
+    
+    //Artikel
+    $router->post('/artikel-status-acc/{id}/update', 'ArtikelController@updateStatusAccArtikel');
 });
 //end register
 
@@ -371,9 +374,9 @@ $router->group(['prefix' => 'faq'], function () use ($router) {
 });
 
 //moderator
-$router->group(['prefix' => 'moderator', 'middleware' => ['auth','role:MODERATOR']], function () use ($router) {
+$router->group(['prefix' => 'moderator', 'middleware' => ['auth','role:MODERATOR|ADMIN']], function () use ($router) {
     $router->get('/{kategori}/list','ModeratorForumController@listModerator');
-    $router->post('/forum/{id}/status', 'ForumController@updateStatusForum');
+    $router->post('/forum/{id}/status',['uses' =>'ForumController@updateStatusForum']);
 });
 
 //auditrail route
