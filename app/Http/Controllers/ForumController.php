@@ -16,7 +16,8 @@ use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
-
+use App\Notifications\ForumClosedNotification;
+use App\Notifications\ForumDeletedNotification;
 /**
  * @group Forum
  * @authenticated
@@ -168,48 +169,29 @@ class ForumController extends Controller
         $this->authorize('updateForum',[Forum::class,$forum->user_id]);
         //isi dengan data baru
         $forum->fill($req->input());
+        $image=null;
+        $file=null;
         if(!is_null($req->objImage)){
             $forum->objImage=$req->objImage;
+            //move gambar
+            $image = $req->objImage;
+            if(!is_null($image)){
+                $ex = $image->getClientOriginalExtension();
+                $imageName = time().".".$ex;
+                $forum->image=$imageName;
+            }
         }
         if(!is_null($req->file_forum)){
             $forum->objFile=$req->file_forum;
+            $file = $req->file_forum;
+            if(!is_null($file)){
+                $exFile = $file->getClientOriginalExtension();
+                $fileName = time().".".$exFile;
+                $forum->file_forum=$fileName;
+            }
         }
         //validasi input
         $validation = $forum->validate();
-
-        //move gambar
-        $image = $req->objImage;
-        if(!is_null($image)){
-            $ex = $image->getClientOriginalExtension();
-            $imageName = time().".".$ex;
-            $forum->image=$imageName;
-        }
-        $file = $req->file_forum;
-        if(!is_null($file)){
-            $exFile = $file->getClientOriginalExtension();
-            $fileName = time().".".$exFile;
-            $model->file_forum=$fileName;
-        }
-
-        //convert base64
-        $isi = $req->input('isi');
-        $dom = new \DomDocument();
-        libxml_use_internal_errors(true);
-        $dom->loadHTML($isi, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $tagImg = $dom->getElementsByTagName('img');
-        foreach($tagImg as $t => $img){
-            $data = $img->getAttribute('src');
-            if(strpos($data,"base64") == true){
-                list($type, $data) = explode(';', $data);
-                list(, $data)      = explode(',', $data);
-                $data = base64_decode($data);
-
-                $image_name = time().'.png';
-                $img->move('forum/isi/'.$auth->id.'', $image_name, 'local');
-                $img->removeAttribute('src');
-                $img->setAttribute('src', $image_name);
-            }
-        }
 
         //jika data valid
         if(!$validation->fails()){
@@ -245,6 +227,13 @@ class ForumController extends Controller
         $forum = $this->findData($id);
         $this->authorize('deleteForum',[Forum::class,$forum->user_id]);
         if(!is_null($forum)){
+            $modelUser=User::find($forum->user_id);
+            if(isset($modelUser)){
+                $auth=Auth::user();
+                if($auth->role_id==1){
+                    $modelUser->notify(new ForumClosedNotification($forum,$modelUser));
+                }
+            }
             $forum->delete();
             activity()->causedBy(Auth::user()->id)->performedOn(new Forum)->log('menghapus forum');
             return response()->json([
@@ -406,6 +395,13 @@ class ForumController extends Controller
                 $model->status = 'closed';
                 $model->alasan = $req->alasan;
                 $model->save();
+                $modelUser=User::find($forum->user_id);
+                if(isset($modelUser)){
+                    $auth=Auth::user();
+                    if($auth->role_id==1){
+                        $modelUser->notify(new ForumClosedNotification($forum,$modelUser));
+                    }
+                }
                 return response()->json([
                     'status'=>'success',
                     'message'=>'Berhasil mengubah status forum',

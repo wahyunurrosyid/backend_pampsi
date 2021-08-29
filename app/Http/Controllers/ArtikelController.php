@@ -17,6 +17,8 @@ use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
+use App\Notifications\ArtikelStatusNotification;
+use App\Notifications\ArtikelDeletedNotification;
 
 /**
  * @group Library
@@ -261,6 +263,13 @@ class ArtikelController extends Controller
         $artikel = $this->findData($id);
         $this->authorize('deleteArtikel',[Artikel::class,$artikel->user_id]);
         if(!is_null($artikel)){
+            $modelUser=User::find($artikel->user_id);
+            if(isset($modelUser)){
+                $auth=Auth::user();
+                if($auth->role_id==1){
+                    $modelUser->notify(new ArtikelDeletedNotification($artikel,$modelUser));
+                }
+            }
             $artikel->delete();
             activity()->causedBy(Auth::user()->id)->log('menghapus artikel');
             return response()->json([
@@ -408,6 +417,12 @@ class ArtikelController extends Controller
     {
         $model = $this->findData($id);
         $model->status_acc = $req->status_acc;
+        $modelUser=User::find($model->user_id);
+        if(isset($modelUser)){
+            $modelUser->notify(new ArtikelStatusNotification(
+                $model,$modelUser
+            ));
+        }
         if($model->save()){
             return response()->json([
                 'status_acc'=>'success',

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Factory;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Kreait\Firebase\Messaging\CloudMessage;
+use Kreait\Firebase\Messaging\Notification as Notif;
+use App\Models\TokenFcm;
+use Illuminate\Support\Facades\DB;
 
 class ChatController extends Controller
 {
@@ -35,6 +39,24 @@ class ChatController extends Controller
 
         if(!empty($resourceChat)){
             $this->database->collection('thread');
+        }
+    }
+    public function sendNotificationChat(Request $req){
+        $model=DB::table('token_fcm')->get();
+        if(isset($model)){
+            foreach($model as $value){
+                if($value->user_id==$req->user_id){
+                    $factory = (new Factory)->withServiceAccount(base_path() . env('PATH_FIRE_JSON'));
+                    $messaging = $factory->createMessaging();
+                    $message = CloudMessage::withTarget('token', $value->token)
+                                        ->withNotification(Notif::create('Pesan baru','Anda telah menerima pesan baru'));
+                    $messaging->send($message);
+                    return response()->json([
+                        'status'=>'success',
+                        'message'=>'Berhasil kirim notifikasi'
+                    ]);
+                }
+            }
         }
     }
 }

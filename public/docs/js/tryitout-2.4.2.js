@@ -52,7 +52,6 @@ function cancelTryOut(endpointId) {
 }
 
 function makeAPICall(method, path, body, query, headers) {
-    console.log({path, body, query, headers});
 
     if (!(body instanceof FormData)) {
         body = JSON.stringify(body)
@@ -199,7 +198,6 @@ async function executeTryOut(endpointId, form) {
             handleResponse(form, endpointId, responseContent, responseStatus, responseHeaders)
         })
         .catch(err => {
-            console.log("Error while making request: ", err);
             handleError(form, endpointId, err);
         })
         .finally(() => {

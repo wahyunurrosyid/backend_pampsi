@@ -386,3 +386,6 @@ $router->group(['namespace' => '\Rap2hpoutre\LaravelLogViewer'/* ,'middleware' =
 
 //chating
 $router->post('/chat/store','ChatController@storeChat');
+
+//notifikasiChat
+$router->post('/chat/notifikasi','ChatController@sendNotificationChat');

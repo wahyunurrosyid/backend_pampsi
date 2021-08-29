@@ -16,6 +16,7 @@ use Kreait\Firebase\Factory;
 use Kreait\Firebase\Messaging\CloudMessage;
 use Kreait\Firebase\Messaging\Notification as Notif;
 use App\Models\TokenFcm;
+use App\Notifications\CommentNotification;
 
 /**
  * @group Comment Forum
