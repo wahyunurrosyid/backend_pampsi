@@ -7,20 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ForumDeletedNotification extends Notification
+class TerimaUserNotification extends Notification
 {
     use Queueable;
-    protected $forum;
-    protected $modelUser;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($forum,$modelUser)
+    public function __construct()
     {
-        $this->forum=$forum;
-        $this->modelUser=$modelUser;
+        //
     }
 
     /**
@@ -31,7 +29,7 @@ class ForumDeletedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['mail'];
     }
 
     /**
@@ -57,10 +55,7 @@ class ForumDeletedNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'tipeModel'=>'Forum',
-            'idModel'=>$this->forum->id,
-            'idUser'=>$this->modelUser->id,
-            'keterangan'=>'Forum dengan judul '.$this->forum->judul.' telah dihapus karena '.$this->forum->alasan. '.',
+            //
         ];
     }
 }

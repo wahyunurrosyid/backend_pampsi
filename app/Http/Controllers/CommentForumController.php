@@ -56,11 +56,20 @@ class CommentForumController extends Controller
     {
         $auth = Auth::user();
         activity()->causedBy($auth->id)->log('mengomentari forum');
+        $fileName='';
+        if(isset($req->objFileContent)){
+            $exFile = $req->objFileContent->getClientOriginalExtension();
+            $fileName = time().".".$exFile;
+        }
         $comment = CommentForum::create([
             'user_id' => $auth->id,
             'content' => $req->content,
             'forum_id' => $id,
+            'file_comment'=> $fileName,
         ]);
+        if(!is_null($req->objFileContent)){
+            $req->objFileContent->move('coment_forum/upload/'.$auth->id.'',$fileName, 'local');
+        }
         $forum = Forum::find($id);
         $title = 'Comment Forum Notification';
         $value = 'Your account has a new comment forum';
@@ -84,7 +93,16 @@ class CommentForumController extends Controller
         $commentForum = $this->findData($id);
         $this->authorize('updateCommentForum', [CommentForum::class, $commentForum->user_id]);
         //isi dengan data baru
+        $fileName='';
+        if(isset($req->objFileContent)){
+            $exFile = $req->objFileContent->getClientOriginalExtension();
+            $fileName = time().".".$exFile;
+        }
         $commentForum->fill($req->input());
+        if(!is_null($req->objFileContent)){
+            $commentForum->file_comment=$fileName;
+            $req->objFileContent->move('coment_forum/upload/'.$auth->id.'',$fileName, 'local');
+        }
         //validasi input
         $validation = $commentForum->validate();
         //jika data valid

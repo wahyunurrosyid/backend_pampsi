@@ -147,7 +147,6 @@ class ArtikelController extends Controller
             ->allowedSorts(['nama_kategori','judul','isi','image','user_id','views'])
             ->allowedFilters(['nama_kategori','judul','isi','image','user_id','views',AllowedFilter::exact('id')])
             ->jsonPaginate()->appends(Request()->input());
-        
         return new ArtikelCollection($artikel);
     }
     /**

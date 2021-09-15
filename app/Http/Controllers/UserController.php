@@ -240,8 +240,8 @@ class UserController extends Controller
             $user->akun_verified_by = $auth->username;
             $user->save();
             
+            dispatch(new ProcessConfirmed($user));
             if($user->status == 2){
-                dispatch(new ProcessConfirmed($user));
                 activity()->causedBy($auth->id)->log('Berhasil konfirmasi registran');
                 return response()->json([
                     'status' => 'success',

@@ -12,6 +12,7 @@ class UserExport implements FromCollection
     */
     public function collection()
     {
-        return User::select('username','nama_lengkap','email')->where('role_id',3)->where('last_login','!=',null)->orWhere('photo_profile','!=',null)->get();
+        // return User::select('username','nama_lengkap','email')->where('role_id',3)->where('last_login','!=',null)->orWhere('photo_profile','!=',null)->get();
+        return User::get();
     }
 }

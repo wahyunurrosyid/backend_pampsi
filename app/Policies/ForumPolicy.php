@@ -12,7 +12,7 @@ class ForumPolicy
 
     public function updateForum(User $user,$user_id)
     {
-        return $user->id === $user_id or $user->hasRole('ADMIN');
+        return $user->id === $user_id or $user->hasRole('ADMIN|PSIKOLOG');
     }
 
     public function deleteForum(User $user,$user_id)

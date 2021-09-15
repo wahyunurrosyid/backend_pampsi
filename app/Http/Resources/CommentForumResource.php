@@ -21,7 +21,8 @@ class CommentForumResource extends JsonResource
         'content',
         'forum_id',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'file_comment',
     ];
     /**
      * Transform the resource into an array.

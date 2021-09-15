@@ -56,7 +56,7 @@ class ConnectionAccepted extends Notification
     {
         return (new MailMessage)
                     ->line(''.$this->namaPenerima.' telah menerima permintaan pertemanan anda.')
-                    ->line('Silahkan cek koneksi pertemanan anda!');
+                    ->line('Silahkan cek pertemanan anda!');
     }
 
     /**

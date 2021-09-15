@@ -222,16 +222,18 @@ class ForumController extends Controller
      * @urlParam id integer required
      * @responseFile storage/responses/forum.delete.json
      */
-    public function deleteForum($id)
+    public function deleteForum(Request $req,$id)
     {
         $forum = $this->findData($id);
         $this->authorize('deleteForum',[Forum::class,$forum->user_id]);
         if(!is_null($forum)){
+            $forum->alasan = $req->alasan;
+            $forum->save();
             $modelUser=User::find($forum->user_id);
             if(isset($modelUser)){
                 $auth=Auth::user();
                 if($auth->role_id==1){
-                    $modelUser->notify(new ForumClosedNotification($forum,$modelUser));
+                    $modelUser->notify(new ForumDeletedNotification($forum,$modelUser));
                 }
             }
             $forum->delete();
@@ -239,6 +241,9 @@ class ForumController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data Forum berhasil dihapus',
+                'data'=>[
+                    'alasan'=>$forum->alasan
+                ]
             ]);
         }
 
